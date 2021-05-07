@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import it.prova.raccoltafilmspringmvc.model.Film;
 
-public interface FilmRepository extends CrudRepository<Film, Long> {
+public interface FilmRepository extends CrudRepository<Film, Long> ,CustomFilmRepository{
 	@Query("from Film f join fetch f.regista where f.id = ?1")
 	Film findSingleFilmEager(Long id);
 
